@@ -22,11 +22,7 @@ local mcomm2
 local mkey
 local hir_rec
 local mhlparr
-LOCAL nTop    := 4
-LOCAL nLeft    := 4
-LOCAL nBottom    := 21
-LOCAL nRight    := 75
-local nCurWindow
+
 if NetUse( "arrears" )
  if NetUse( "tran" )
   if NetUse( "owner"  )
@@ -44,8 +40,6 @@ if NetUse( "arrears" )
   endif
  endif
 endif
-SysColor( C_NORMAL )
-// nCurWindow := WVW_nOpenWindow('Enquiry on contract', 1, 1, 24, 78 )
 
 while ok
 
@@ -57,17 +51,9 @@ while ok
   return
 
  endif
- 
- mContractNum := Oddvars( CONTRACT )
- 
- nCurWindow := WVW_nOpenWindow("Enquiry on Contract Number " + ns( mContractNum ), 1, 1, 24, 78 )
- WVW_SetIcon(, 'vr_1.ico' )
 
- //WVW_nSetCurWindow( nCurWindow )
- //WVW_SetTitle(,"Enquiry on Contract Number " + ns( mContractNum ) )
- Syscolor( C_NORMAL )
- cls
- 
+ mContractNum := Oddvars( CONTRACT )
+
  master->( dbseek( mContractNum ) )
 
  mcomm1 := master->comments1
@@ -172,9 +158,6 @@ while ok
 
  enddo
 
- WVW_lCloseWindow()
-
- 
 enddo
 Oddvars( ENQ_STATUS, TRUE )
 close databases
@@ -185,12 +168,10 @@ return
 procedure ContractEnq ( mContractNum )
 local mrow
 local minsure
-
 cls
-//Heading( 'Enquiry on contract #' + Ns( mContractNum ) )
+Heading( 'Enquiry on contract #' + Ns( mContractNum ) )
 
 Syscolor( C_NORMAL )
-cls
 if file( OddVars( SYSPATH ) + "mcomment\" + Ns(mContractNum) + ".txt" )
  HighLight( 01, 01, "", "F4" )
 endif

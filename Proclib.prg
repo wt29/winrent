@@ -186,21 +186,18 @@ local mbysuburb := FALSE
 local mbyphone := FALSE
 local mbyaddress := FALSE
 local mByMobile := FALSE
-local nCurWIndow1, nCurWindow2
 
-// Heading('Contract Find')
-nCurWindow1 := WVW_nOpenWindow("Contract Search", 4, 1, 6, 78 )
+Heading('Contract Find')
 
 while TRUE
  mident := space( 10 )
 
-// Box_Save( 4, 01, 6, 78, C_GREY )
+ Box_Save( 4, 01, 6, 78, C_GREY )
  @ 5, 02 say 'Contract No,Surname,*Deposit Book,/Address,+Suburb,-Phone,?Mobile' get mident pict '@!'
  Syscolor( C_NORMAL )
  read
 
  if !updated()
-  
   exit
 
  else
@@ -264,10 +261,8 @@ while TRUE
    else
     hirer->( dbskip( -1 ) )
 
-//    Box_Save( 2, 02, 22, 78 )
-    nCurWindow2 := WVW_nOpenWindow("Contract Search", 2, 2, 22, 78 )
-
-//	Heading('Contract no find')
+    Box_Save( 2, 02, 22, 78 )
+    Heading('Contract no find')
 //    altd(1)
     enqobj:=tbrowse():new( 03, 03, 21, 77 )
     enqobj:colorspec := if( iscolor(), TB_COLOR, setcolor() )
@@ -322,9 +317,7 @@ while TRUE
     enddo
 
    endif
-   
-   wvw_lCloseWindow()
-   
+
   otherwise
    mContractNum := val( mident )
 
@@ -363,9 +356,7 @@ while TRUE
 
 enddo
 Oddvars( CONTRACT, mContractNum )
-// Box_Restore( cf )
-
-wvw_lCloseWindow()
+Box_Restore( cf )
 return got_it
 
 *

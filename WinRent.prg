@@ -8,7 +8,6 @@
 
 #include "winrent.ch"
 #include "set.ch"
-#include "hbgtinfo.ch"
 
 Procedure Main()
 
@@ -23,13 +22,22 @@ local getdefprt := GetDefaultPrinter()
 local aBox
 local sNoColor
 local sFile
-local lMainCoord 
-local hwnd, hmenu, hpopupmenu, ch
+
 
 #ifndef NOAUDIT
 local oPrinter
 #endif
-        
+
+local lMainCoord := WVW_SetMainCoord( .t. )
+WVW_SetCodePage(,255)
+WVW_SetFont( , "Lucida Console", 28, -12 )
+
+//WvW_SBCreate( 0 )    // 0 is the first window created
+//WvW_SBSetText( 0, 0 , "System Info" )
+//WvW_SBAddPart( 0, REPLICATE( CHR(0), 3 ) )     // Section 2
+//WvW_SBAddPart( 0, REPLICATE( CHR(0), 3 ) )    // Section 3
+//WvW_SBAddPart( 0, REPLICATE( CHR(0), 4 ) )   // Section 4
+         
 parameter sCmdParams
 
 set scoreboard off
@@ -108,8 +116,6 @@ if !file( sFile )
 
 endif
 
-
-/*
 cls
 mlen := max( 15, ( 20 + len( trim( BVars( B_COMPANY ) ) ) ) / 2 )
 
@@ -120,28 +126,9 @@ Center( 08, SUPPORT_PHONE )
 Center( 09, 'Licensed to -=< ' + trim( BVars( B_COMPANY ) ) + ' >=-' )
 Center( 10, 'Build Version V' + BUILD_NO )
 Center( 11, 'Current System Date is ' + dtoc( Oddvars( SYSDATE ) ) )
-*/
 
-lMainCoord := WVW_SetMainCoord( .t. )
-WVW_SetCodePage(,255)
-WVW_SetFont( ,"Lucida Console",16,-8 )
 
-WvW_SBCreate( 0 )    // 0 is the first window created
-WvW_SBSetText( 0, 0 , "System Info" )
-WvW_SBAddPart( 0, REPLICATE( CHR(0), 3 ) )     // Section 2
-WvW_SBAddPart( 0, REPLICATE( CHR(0), 3 ) )     // Section 3
-WvW_SBAddPart( 0, REPLICATE( CHR(0), 4 ) )     // Section 4
-
-wvw_setTitle(0,SYSNAME + " Version " + BUILD_NO )
-
-lBoxMessage( 'Copyright Bluegum Software' + CRLF + ;
-			 SUPPORT_PHONE + CRLF + CRLF +;
-			 'Licensed to -=< ' + trim( BVars( B_COMPANY ) ) + ' >=-' + CRLF +;
-			 'Build Version V' + BUILD_NO + CRLF +;
-			 'Current System Date is ' + dtoc( Oddvars( SYSDATE ) ) ,;
-			 '*** Welcome to ' + SYSNAME + ' ***' )
-
-			 #ifdef SECURITY
+#ifdef SECURITY
 Login( FALSE )    // Not allowed to add an operator here
 
 #else
@@ -178,64 +165,12 @@ setkey( K_ALT_L, { || Login( TRUE ) } )   // Allow an Operator Add
 Oddvars( LASTITEM, '0' )  // Init this item otherwise it crashes - it expects a char
 Oddvars( LASTCONT, '0' )
 
-// box_restore( aBox )
+box_restore( aBox )
 
 sNoColor := SysColor( C_NORMAL )
 
 Print_find( 'report' )   // Set up the default printer
 
-// hb_gtInfo( HB_GTI_INKEYFILTER, {|nkey| nAfterInkey(nkey) } )
-WVW_SETMOUSEMOVE(,.t.)  
-
-hWnd := WvW_GetWindowHandle()
-hMenu := WvW_CreateMenu()
-
-hPopUpMenu := WvW_CreateMenu()
-WVW_AppendMenu( hPopupMenu, MF_ENABLED + MF_STRING, IDM_E_CONTRACT, "&Contract" )
-WVW_AppendMenu( hPopupMenu, MF_ENABLED + MF_STRING, IDM_E_ITEM, "~Item" )
-WVW_AppendMenu( hPopupMenu, MF_ENABLED + MF_STRING, IDM_E_OWNER, "~Owner" )
-WVW_AppendMenu( hPopupMenu, MF_SEPARATOR )
-WVW_AppendMenu( hPopupMenu, MF_ENABLED + MF_STRING, IDM_E_EXIT, "E~xit"  )
-
-WVW_AppendMenu( hMenu     , MF_ENABLED + MF_POPUP , hPopupMenu , "~Enquire",  )
-
-hPopupMenu := WVW_CreateMenu( )
-WVW_AppendMenu( hPopupMenu, MF_ENABLED + MF_STRING, IDM_F_CONTRACT, "~Contract" )
-WVW_AppendMenu( hPopupMenu, MF_ENABLED + MF_STRING, IDM_F_ITEM,  "~Items" )
-WVW_AppendMenu( hPopupMenu, MF_ENABLED + MF_STRING, IDM_F_OWNER, "~Owner" )
-
-WVW_AppendMenu( hMenu     , MF_ENABLED + MF_POPUP , hPopupMenu , "~File",  )
-
-WvW_SetMenu(, hMenu)
-
-// SetColor( 'N/W,N/GR*,,,N/W*' )
-
-nCurWindow := WVW_nNumWindows()-1 // == 0, Main Window
-
-CLS
-	  
-   do while TRUE
-     ch:=inkey(0)
-      do case
-         case ch==asc("<")
-            wvw_setPaintRefresh( INT(wvw_setPaintRefresh() / 2) )
-            alert(wvw_setPaintRefresh())
-         case ch==asc(">")
-            wvw_setPaintRefresh( INT(wvw_setPaintRefresh() * 2) )
-            alert(wvw_setPaintRefresh())
-         // case ch==asc("0")
-         //   wvw_setPaintRefresh( 0 )
-         //   alert(wvw_setPaintRefresh())
-         otherwise
-		
-	//	@ 3,10 say ns( ch )
-        nAfterInkey( ch )
-		* do nothing. inkey() has been handled by nAfterInket()
-      endcase
-      
-   enddo
-
-/*
 while TRUE
 
  Syscolor( sNoColor )
@@ -452,7 +387,6 @@ while TRUE
 
 enddo
 
-*/
 return
 
 *
@@ -525,55 +459,3 @@ endif
 
 return nil
 
-function nAfterInkey(nkey)
-* check if nkey is:
-* (1) menu command, or
-* (2) mouse button action
-local bAction
-  if nkey==WVW_DEFAULT_MENUKEYEVENT
-     * MenuKeyEvent
-     return nMenuChecker(WVW_GETLASTMENUEVENT())
-
-  elseif ASCAN({K_LBUTTONDOWN, K_LBUTTONUP, K_MOUSEMOVE, K_MMLEFTDOWN,;
-                K_LDBLCLK}, nKey) > 0
-  
-  * MouseEvent
- 
- elseif (bAction := SETKEY(nKey)) != NIL
-     eval(bAction, PROCNAME(), PROCLINE(), READVAR())
-     return 0
-  
-  endif
-
-  return nkey //nAfterInkey(nkey)
-
-
-// MENU handler **************************************
-
-function nMenuChecker(nMenuEvent)
-local nkey := 0
- //  xDisableMenus(0, 4)
-   //xDisableToolbar(0)
-
-   do case
-      case nMenuEvent==IDM_E_CONTRACT
-           enqCont()
-      case nMenuEvent==IDM_E_ITEM
- 
-      case nMenuEvent==IDM_E_EXIT
-         AppQuit()
-
-
-      otherwise
-        lboxmessage("Sorry, unknown menu option")
-   endcase
-
-   //xEnableToolbar(0)
- //  xEnableMenus(0, 4)
-return nkey //nMenuChecker()
-
-
-function lBoxMessage(cMsg, cTitle)
-   default cTitle to "Info"
-   win_messagebox(WVW_GETWINDOWHANDLE(), cMsg, cTitle, MB_OK + MB_ICONINFORMATION + MB_SYSTEMMODAL)
-return .t.
