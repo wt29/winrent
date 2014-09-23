@@ -95,7 +95,7 @@ local oWindow
 
 // nCurWindow := WVW_nOpenWindow(cWinName, nTop, nLeft, nBottom, nRight)
    
-
+#ifdef GTWVW
  oWindow := WvW_nOpenWindow( "System Information",0, 0, 06, 60 )
  WvW_SBCreate( oWindow )
  WvW_SBSetText( oWindow, 0 , "System Info" )
@@ -104,7 +104,7 @@ local oWindow
 //      :SetStatusBar( "WvwGetsys Demo!" )
 //      :SetFont( "Courier New" )
 //      :Create()
-   
+#endif   
 //local cScr := Box_Save( 2, 05, 10, 76 )
 Highlight( 00, 00, 'OS', os() )
 Highlight( 01, 00, 'RDD', rddsetdefault() )
@@ -120,8 +120,10 @@ Highlight( 06, 00, 'Node', LVars( L_NODE ) )
 inkey(0)
 
 //
+#ifdef GTWVW
    WVW_lCloseWindow()
-//Box_Restore( cScr )
+#endif
+   //Box_Restore( cScr )
 return
 
 *

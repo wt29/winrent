@@ -28,10 +28,13 @@ local sFile
 local oPrinter
 #endif
 
+#ifdef GTWVW
 local lMainCoord := WVW_SetMainCoord( .t. )
 WVW_SetCodePage(,255)
 WVW_SetFont( , "Lucida Console", 28, -12 )
-
+#else
+setmode( 25, 80 )
+#endif
 //WvW_SBCreate( 0 )    // 0 is the first window created
 //WvW_SBSetText( 0, 0 , "System Info" )
 //WvW_SBAddPart( 0, REPLICATE( CHR(0), 3 ) )     // Section 2
@@ -398,7 +401,7 @@ aadd( aMenu, { 'Reset "Sort Keys"', 'Reset all the Sort keys in the master file'
 aadd( aMenu, { 'Update rents for GST', 'Adjust Item Rents & Installments', { || GSTUpdate() } } )
 aadd( aMenu, { 'Check local file structures', 'Ensure field lengths etc are OK', { || Check_new_dbf() } } )
 aadd( aMenu, { 'Change System Date & GST rate', 'Directly Modify System Date', { || SD_Set() } } )
-aadd( aMenu, { 'Check Email Functionality', 'Send a test email', { || SMTP_Send( TRUE ) } } )
+// aadd( aMenu, { 'Check Email Functionality', 'Send a test email', { || SMTP_Send( TRUE ) } } )
 aadd( aMenu, { 'Edit Master File', 'Delete duplicate records', { || MasterDupl( ) } } )
 aadd( aMenu, { 'Update file schema', 'Update all files to latest schema', { || FixSchema( ) } } )
 
@@ -452,7 +455,7 @@ if Isready( 'Ok to quit ' + SYSNAME )
  aeval( directory( '*' + TEMP_EXT ), { | del_element | ferase( del_element[ 1 ] ) } )
 
  // Syscolor( C_NORMAL )
- // cls
+ cls
  quit
 
 endif

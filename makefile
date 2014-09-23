@@ -1,6 +1,6 @@
 VERSION=BCB.01
 CC_DIR = C:\Program Files\Microsoft Visual Studio 9.0\VC
-HB_DIR = c:\develop\xharbour\1.20
+#HB_DIR = c:\develop\xharbour\1.20
 #HB_DIR = c:\hb30
  
 RECURSE= NO 
@@ -44,16 +44,10 @@ TOPMODULE = WINRENT.PRG
 RESFILES = WINRENT.RES
 RESDEPEN = 
 
-GTLIB = gtwvw.lib
-
-#HBLIBS = hblang.lib hbvm.lib hbrtl.lib hbrdd.lib hbmacro.lib hbpp.lib rddntx.lib rddcdx.lib rddfpt.lib \
-#          hbcommon.lib hbcpage.lib hbmzip.lib hbtip.lib hbdebug.lib hbzlib.lib hbct.lib  $(GTLIB)
-#rddsix.lib hbpcrepos.lib
+GTLIB = gtwvt.lib
 
 HBLIBS = lang.lib vm.lib rtl.lib rdd.lib macro.lib pp.lib dbfntx.lib dbfcdx.lib dbffpt.lib \
-         pcrepos.lib common.lib codepage.lib ct.lib hbsix.lib hbzip.lib tip.lib debug.lib zlib.lib $(GTLIB)
-
-#hsx.lib hbsix.lib dbfntx.lib
+         pcrepos.lib common.lib codepage.lib ct.lib hbsix.lib hbzip.lib tip.lib zlib.lib debug.lib $(GTLIB)
 
 CLIBS = user32.lib winspool.lib gdi32.lib ole32.lib oleaut32.lib ws2_32.lib comctl32.lib advapi32.lib
 
@@ -87,10 +81,10 @@ ALLLIB = $(HBLIBS) $(CLIBS)
 #.c{$(SRC09)}.obj:
 
 .c.obj:
- cl -I$(HB_DIR)\include $(CFLAGS) -Fo$* $**
+ cl -I$(HB)\include $(CFLAGS) -Fo$* $**
 
 .prg.c:
- $(HB_DIR)\bin\harbour /D__EXPORT__ /I$(HB_DIR)\include $(HARBOURFLAGS) $** -O$*
+ $(HB)\bin\harbour /D__EXPORT__ /I$(HB)\include $(HARBOURFLAGS) $** -O$*
  
 .rc.res:
  $(CC_DIR)\rc $(RFLAGS) $<
@@ -98,6 +92,6 @@ ALLLIB = $(HBLIBS) $(CLIBS)
 #BUILD
 #$(CFILES) $(RESDEPEN) $(DEFFILE)
 winrent.exe: $(PRGFILES) $(CFILES) $(OBJFILES)
-		link $(OBJFILES) $(HB_DIR)\obj\vc\mainwin.obj $(ALLLIB) $(ALLRES) /out:winrent.exe /map:winrent.map $(LFLAGS)
+		link $(OBJFILES) $(HB)\obj\vc\mainwin.obj $(ALLLIB) $(ALLRES) /out:winrent.exe $(LFLAGS)
 
 #        link $(OBJFILES) $(ALLLIB) /out:winrent.exe /map:winrent.map $(LFLAGS)

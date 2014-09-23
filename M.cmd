@@ -8,7 +8,7 @@ rem for Multi thread support, un-remark next line
 rem set HB_MT=MT
 
 rem nmake
-call m_vc.cmd
+call m_bcc.cmd
 if not exist winrent.exe goto noexe
 goto end
 :noexe 
