@@ -930,7 +930,7 @@ text
  <Ctrl-T> Delete Word
 
 endtext
-Center( 15, '[  Rentals Substitute Variables  ]' )
+Centre( 15, '[  Rentals Substitute Variables  ]' )
 @ 17,04 say '%FIRST   -> first name   %ADD1 -> address line 1  %SUBURB   -> suburb'
 @ 18,04 say '%SURNAME -> surname      %ADD2 -> address line 2  %PAGE     -> new page'
 @ 19,04 say '%AMT     -> amount due   %DUE  -> date due        %CONTRACT -> cont. no'

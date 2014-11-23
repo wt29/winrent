@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Statements</title>
+  <link rel="stylesheet" type="text/css" href="winrent.css">
+</head>
+<body>
+<h1>Statements</h1>
+<p>Winrent includes functions to output hirer statements or "Arrears
+Letters"</p>
+<p>These letters are usually used as as reminders for customers in
+arrears however there are also some peripheral functions to send
+letters to all or selected customers</p>
+<p>The arrears functions can provide up to three levels of letters.
+Depending on how you run your business, you may choose to used zero
+(no),one, two or three letters.</p>
+<p> For example,if you choose to use 3 letters they may have increasing
+levels of demand for payment such as</p>
+<ul>
+  <li>Letter 1 - "Dear Customer, I has come to our attention that
+payment on you rental....." </li>
+  <li>Letter 2 - "Dear Customer, despite sending you a letter.....A
+late fee may be charged...." </li>
+  <li>Letter 3 - "Dear Customer, we have now dispatched 2 letters
+requesting.... payment must be..." </li>
+</ul>
+<p>As stated, you can choose to use 0,1,2 or 3 levels of letters.
+Winrent will record the date each letter was created as an ongoing
+"Arrears" history against contracts. The system will not dispatch a
+letter 2 (for example)unless a letter 1 has been sent. This applies to
+letter 3 as well. i.e. A letter 3 will not be sent unless letter 2 has
+been sent.</p>
+<p>Letters are sent based on the period the contract has been overdue
+(in arrears) and whether the other letters have been sent. This means
+that <i>if you choose to use more that one level of letter (1), you
+must make run at the higher level of letters first</i> To explain
+further, assume you send Letter 1 7 days after payment due, Letter 2 14
+days and Letter 3 21.You go on 3 weeks holiday. When you return your
+contracts are at least 14 days in arrears (you haven't posted payments
+yet) so you run Letter 1 first, this creates a letter for all users
+over 7 days. All good so far, you then run Letter 2, Winrent then
+decides that Letter 1 has been sent and then looks at the contracts,
+calculates that 14 days has elapsed and then creates Letter 2 <i> for
+the same customer</i></p>
+<p>If the same sequence is run Letter 3, 2 and then 1, the 2nd (or 3rd)
+letter won't be created as the 2nd (or 1st) Letter has not been
+created, at this point in time. This may sound convoluted but it is
+important to remember.</p>
+<p>Note that Winrent can optionally charge a late fee on the dispatch
+of the first or second letter. The options to configure this, including
+the amount, are in Utilities/Details.</p>
+<p>There are 2 options to actually create the letter</p>
+<ul>
+  <li>Direct using the inbuilt text editor</li>
+  <li>Creating a "Mail Merge" file and using a commercial word
+processor typically Microsoft Word</li>
+</ul>
+The mail merge system will produce a much more professional letter
+however it requires you to understand how to utilise Word mail merging.
+<h2>Inbuilt Text Editor</h2>
+Once you enter a Statement menu option, you are prompted<br>
+<br>
+<span style="font-weight: bold;">Print Letters? (Answering 'N' will
+create a mail merge file)<br>
+<br>
+</span><span style="font-weight: bold;"><span style="font-weight: bold;"></span></span>Answering
+'N' will commence creating a letter using the inbuilt text editor<br>
+<br>
+Next prompt is "Number of Days Overdue" This value will depend on which
+letter you are printing and what your own personally tolerances for
+overdue accounts. For example, you may be printing 2 letters with the
+first going at 7 days overdue and the second at 14.<br>
+<br>
+You are now asked for the name of the letter file. This file contains
+the text of the letter you are about to send. Most WinRent users call
+these (strangely) LETTER1, LETTER2 and LETTER3. You can use any 8
+character name for any letter. If the text is already on file, Winrent
+will ask "Re-edit Letter File?" Answering "Y" will open the text editor
+with the current letter text displayed.<br>
+<br>
+If the file name is not found, Winrent prompts "File not found"
+followed by "Create New Letter File?" Answer "Y" and the text editor
+will open. The text editor is particularly primitive however the mail
+feature of the system are the "Substitute Variables". These are denoted
+by a "%" sign followed by the name of the variable. The name is always
+in CAPITALS For example when Winrent sees %AMT in the text, it will
+substitutes the current amount owed. <br>
+<br>
+Here is a sample letter.<br>
+<br>
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MyRent Pty Ltd<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+PO Box 999<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+SYDNEY 2000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Office Phone : 1234 5678<br>
+      <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date: %DATE<br>
+      <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+%FIRST %SURNAME<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+%ADD1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+%ADD2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+%SUBURB %PCODE<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Re: Outstanding Rental - Account No:%CONTRACT <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <br>
+--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+--<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Dear Hirer / Hirers,<br>
+      <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Your Appliance Rental Agreement currently has an <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+outstanding amount of $%AMT<br>
+      <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+This amount was due on %DUE. Please make your payment <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+immediately<br>
+      <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Yours faithfully<br>
+      <br>
+      <br>
+      <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MyRent Pty Ltd<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+      <br>
+%PAGE<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<span style="font-weight: bold;"></span>This letter demonstrates most
+of the substitute variables available. To see the full list, Hit F10
+inside the world processor. Note the %PAGE at the bottom. This causes
+the printer to eject and begin a new page. Without this, the system
+will just start the next letter immediately (on the same page) as the
+last one.<br>
+<br>
+Once you have finished editing, you must save the document using
+"Ctrl-W" (Control W). Winrent will then ask you if you wish to print a
+test page. Winrent will use the first contract on the system
+(regardless of whether they are in arrears) as the test document. You
+can test this as many times as you need. Once you answer NO to the test
+print question, Winrent prompts "Ready to begin printing?" Answer "Y"
+to commence. "N" will take you back to the statement menu.<br>
+<br>
+As printers can be difficult, Winrent waits until all letters (for a
+run) have been printed before is asks "OK to update files". If you are
+satisfied with the print output then answer "Y' and Winrent will update
+the letter field in the arrears file for all contract where a letter
+has been produced. e.g. if you are printing Letter 3, all contracts
+which have had a letter 3 output will have the current system date
+inserted into the Letter 3 field for the arrears details file.<br>
+<h2>Mail merge File</h2>
+The procedure for outputting a mail merge file is close to that of the
+letter printing option.Answering "N" to the "Print Letters" question
+will cause Winrent to output a "TAB Delimited" file. The file name will
+be LETTER1.CSV, LETTER2.CSV or LETTER3.CSV depending on which letter
+you have selected. Again Winrent will ask for the number of days the
+contract must be in arrears before the contract is selected for
+inclusion.<br>
+<br>
+The same rules about the precedence of the letters and the "Update
+files" section apply as well. <br>
+<br>
+The mailmerge file has the following fields outputted, one line per
+contract.<br>
+<br>
+Contract Number, First Name, Surname, Address Line 1, Address Line 2,
+Suburb (City), Postcode, Amount Due, Date Due, System Date<br>
+<br>
+Once the file has been built then you will need to use your word
+processor to open it and commence the mail merge process. Details of
+how to do this are beyond the scope of this manual.
+</body>
+</html>

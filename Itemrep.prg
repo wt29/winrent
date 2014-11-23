@@ -173,7 +173,7 @@ while TRUE
    else
     Highlight( 09, 10, 'Owner to print is ', owner->name )
     madvance := FALSE
-    Center( 11, 'The last month the count for this owner was advanced was ' ;
+    Centre( 11, 'The last month the count for this owner was advanced was ' ;
                 + cmonth( owner->lastpay ) )
     @ 13,10 say 'Advance the Lease Payment Counter' get madvance pict 'Y'
     read
@@ -204,7 +204,7 @@ while TRUE
        endif
 
        select items
-       Center( 15, "-=< Reindexing Items file - please wait >=-" )
+       Centre( 15, "-=< Reindexing Items file - please wait >=-" )
        if mlist = 'P'
         indx( 'owner_code + prod_code' , 'temp' )
 

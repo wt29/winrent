@@ -163,7 +163,7 @@ Syscolor(2)
 p_len := len(p_text)
 col := int((80-p_len)/2) - 2
 Box_Save(7,col,9,col+3+p_len)
-Center(8,p_text)
+Centre(8,p_text)
 set cursor off
 inkey(1.5)
 set cursor on
@@ -527,7 +527,7 @@ return mdesc
 
 *
 
-procedure center ( p_line, p_text )
+procedure centre ( p_line, p_text )
 p_text = trim( p_text )
 @ p_line,40-(len(p_text)/2) say p_text
 @ 0,0 say ''
@@ -544,21 +544,21 @@ if errow = nil
  mscr := Box_Save( 24, 0, 24, 79 )
  syscolor( C_INVERSE )
  Line_clear( 24 )
- Center( 24, ertext + ' - Hit any key to continue - ' )
+ Centre( 24, ertext + ' - Hit any key to continue - ' )
 
 else
  er_right := ercol + max( 27, max( len( ertext ), if( extrainfo != nil, len( extrainfo ), 0 ) ) ) + 4
  er_bott := errow + if( erwait = nil, 2, 1 ) + if( empty( ertext ), 0, 1 ) +;
               if( extrainfo = nil, 0, 1 )
  mscr:=Box_Save( errow, ercol, er_bott, er_right, C_RED )
- Center( errow + 1, ertext )
+ Centre( errow + 1, ertext )
  if extrainfo != nil
-  Center( errow + 2, extrainfo )
+  Centre( errow + 2, extrainfo )
 
  endif
 
  if erwait = nil
-  Center( er_bott - 1, '- Hit any key to continue -' )
+  Centre( er_bott - 1, '- Hit any key to continue -' )
 
  endif
 
@@ -1870,7 +1870,7 @@ if !found()
       if updated()
        if dbseek( mcat )
         mscr:=Box_Save( 11, 08, 13, 72, C_GREY )
-        Center( 12, 'Name ÍÍÍ¯ ' + (mwork)->name )
+        Centre( 12, 'Name ÍÍÍ¯ ' + (mwork)->name )
         Error( 'Code already on file',12 )
         Box_Restore( mscr )
 
@@ -2060,9 +2060,9 @@ local nUpdate := Bvars( B_GSTRATE )
 local cScr := Box_Save( 3, 10, 9, 70 )
 local getlist := {}
 local nCursor
-Center( 4, 'Be extremely careful here. This routine will increase prices' )
-Center( 5, 'on all Contract Installments & Item Rental values.')
-Center( 6, 'Backup the System First !!!' )
+Centre( 4, 'Be extremely careful here. This routine will increase prices' )
+Centre( 5, 'on all Contract Installments & Item Rental values.')
+Centre( 6, 'Backup the System First !!!' )
 if IsReady( )
  if NetUse( 'master', EXCLUSIVE )
   if NetUse( 'items', EXCLUSIVE )

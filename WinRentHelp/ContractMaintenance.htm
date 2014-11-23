@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+  <meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+  <title>Contract Maintenance</title>
+  <link rel="stylesheet" type="text/css" href="winrent.css">
+</head>
+<body>
+<h1>Contract Maintenance</h1>
+<p>Contracts are central to the
+operation of WinRent. WinRent allocates a unique contract number to
+each contract. Contracts tie together "Hirers", Items and contract
+specific details such as comments and balances. <br>
+Before you can create contracts, you will need to add fleet items
+(items) to the system. Access the contract maintenance screen from the
+Main Menu using FC. Options in this menu are</p>
+<ul>
+  <li>Add - Add a new contract to
+the system
+  </li>
+  <li>Change - Change details of
+hirers, items and contract detail
+  </li>
+  <li>Delete - Remove a contract
+from the system. You must have no items on hire to delete a contract.
+  </li>
+</ul>
+<h2>Add</h2>
+<p>WinRent will prompt you with
+the next sequential contract number. You are free to use this number or
+subsitute one of your own. Contract numbers are numeric only. If you
+add your own number, Winrent will check to see if the number entered is
+unique. You will be prompted to re-enter if it is not.</p>
+<p>The first hirer on the contract
+is requested. This field is mandatory. If you hit escape or leave the
+field blank and no other hirers have been added to the contract,
+WinRent will abandon the contract and return you to the Contract
+Maintenance MenU</p>
+<p>Once a surname is added,
+Winrent will present the rest of the hirer details dialog. All of the
+fields on this screen are optional. Fill in the details as required and
+either hit Enter until the cursor leaves the bottom of the screen or
+hit PgDn. <br>
+Continue to add hirers to the contract (if any) and finish added hirers
+by hitting Enter at a blank surname prompt</p>
+<p>Enter the payment period for
+the contract. This may be changed later</p>
+<p>Winrent will now prompt to
+enter the Item code of the first item to be added to the contract. You
+may change to "Find by Item Serial No" by hitting <f10>.
+<f10> will toggle searching
+between Item and Serial numbers</f10></f10></p>
+<p>Once you have entered a valid
+code, Winrent will add this to the contract and request the rental
+amount (for the item) on the period selected for the contract. You can
+overwrite this value at any time. Winrent will then prompt for the next
+item to be added. You can add an unlimited number of items. Once there
+are no more items to add, Hit Enter on a blank item field and Winrent
+will proceed to the last step in the addition of a new contract</p>
+<p>The following fields are
+displayed</p>
+<ul>
+  <li>Commencement Date - this
+field can be in the past or the future. This date is only used for
+reference
+  </li>
+  <li>Paid to Date - this is an
+important field. Winrent will record this as literally the "paid to"
+date for the contract. The next installment on this contract will be
+due on the day after the "Paid to date" </li>
+  <li>Period of Grace - this is
+the number of days after the "Paid to Date" that the End of Day routine
+will wait before it generates an arrears record. For example - If a
+contract is Monthly, it is due on the 18th of the month and the Period
+of Grace is 3 then the hirer will have up to the 21st of the month
+before an arrears notice is generated
+  </li>
+  <li>Location Area - Is a 3
+character code that can be used to group contracts. For example, you
+may designate an area as area "1". A Report is available that list all
+items for pickup within the same Location Area.
+  </li>
+  <li>Bond Paid - enter the amount
+of Bond paid by the Hirer (if any)
+  </li>
+  <li>Comments fields. These are
+ther "quick" comment field. They can be edited at any time. Note there
+is also an "Extended" comment field on each contract (and stock item)
+which is often used as a running history. Why are there 2 comment
+fields? The quick comments were the original comment fields from when
+WinRent was DOS "RENTALS" and ran on a floppy drive
+  </li>
+  <li>Deposit book Numbers - Some
+WinRent users issue a "deposit book" for clients to make deposits. The
+Deposit Book Number can be used as a lookup for contracts - especially
+during payment entry
+  </li>
+  <li>Rental Period - Information
+field. You may be only renting an item for 6 months
+  </li>
+</ul>
+<p> Hit PgDn to complete and save
+the item details. As before Esc will abandon (not save) the data entered</p>
+<h2>Change</h2>
+<p>Enter the item code to change
+details including history fields</p>
+<h2>Owner</h2>
+<p> This function allows you to
+change a range of items from one owner to another. Typically these will
+be items coming "off lease". The function requires entering an "old"
+owner and a "new" owner. Once entered you can enter a number of item
+codes. You will be prompted to confirm each change</p>
+<h2>Delete</h2>
+<p>Delete old stock items from the
+system using this function. Items that are on hire cannot be deleted.
+All item history is also deleted.</p>
+<h2>History</h2>
+<p>Used to add repair history to
+items</p>
+</body>
+</html>

@@ -157,7 +157,7 @@ Print_find( cOtherPrinter )
 
 // WvW_SBSetText( 0, 0 , 'Printing to ' + LVars( L_PRINTER ) )
 
-// Center( 24, 'Printing to ' + LVars( L_PRINTER ) )
+// Centre( 24, 'Printing to ' + LVars( L_PRINTER ) )
 
 oPrinter:= Win32Prn():New( trim( LVars( L_PRINTER ) ) )
 oPrinter:Landscape:= .F.

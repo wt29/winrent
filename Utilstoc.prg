@@ -48,9 +48,9 @@ while TRUE
  do case
  case choice = 2
   Box_Save(03,08,09,72)
-  Center(04,'This module will prepare the asset file for the stocktake.')
-  Center(05,'It clears the stocktake found flag and last stocktake location.')
-  Center(07,'It is a mandatory step in the stocktaking process.')
+  Centre(04,'This module will prepare the asset file for the stocktake.')
+  Centre(05,'It clears the stocktake found flag and last stocktake location.')
+  Centre(07,'It is a mandatory step in the stocktaking process.')
   Heading('Stocktake Preparation')
   if Isready()
    Box_Save(09,19,11,58)

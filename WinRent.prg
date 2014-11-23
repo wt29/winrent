@@ -9,7 +9,7 @@
 #include "winrent.ch"
 #include "set.ch"
 
-Procedure Main()
+Function Main()
 
 local nMenuChoice
 local mlen,getlist:={}
@@ -18,30 +18,24 @@ local aMenu
 local aMenuScr
 local okaf1
 local nSelRow
-local getdefprt := GetDefaultPrinter()
 local aBox
 local sNoColor
 local sFile
-
+local sCmdParam
 
 #ifndef NOAUDIT
 local oPrinter
 #endif
 
-#ifdef GTWVW
+#ifdef __GTWVW__
 local lMainCoord := WVW_SetMainCoord( .t. )
+
 WVW_SetCodePage(,255)
 WVW_SetFont( , "Lucida Console", 28, -12 )
 #else
+
 setmode( 25, 80 )
 #endif
-//WvW_SBCreate( 0 )    // 0 is the first window created
-//WvW_SBSetText( 0, 0 , "System Info" )
-//WvW_SBAddPart( 0, REPLICATE( CHR(0), 3 ) )     // Section 2
-//WvW_SBAddPart( 0, REPLICATE( CHR(0), 3 ) )    // Section 3
-//WvW_SBAddPart( 0, REPLICATE( CHR(0), 4 ) )   // Section 4
-         
-parameter sCmdParams
 
 set scoreboard off
 set deleted on
@@ -51,38 +45,23 @@ set epoch to 1990
 set wrap on
 set exclusive off
 
-#ifdef SQL
-REQUEST SQLRDD             // SQLRDD should be linked in
-REQUEST SR_ODBC            // Needed if you plan to connect with ODBC
-rddsetdefault( "SQLRDD" )
-cConnString := "dsn=rentals;uid=sa;pwd=saadmin"
-nCnn := SR_AddConnection( CONNECT_ODBC, cConnString )
-
-#else
 request DBFCDX
 rddsetdefault( "DBFCDX" )
 
-#endif
 set( _SET_EVENTMASK, INKEY_ALL )
 set( _SET_DEBUG, .t. )
 set( _SET_AUTOPEN, TRUE )
 set( _SET_AUTORDER, TRUE )
 
-// sCmdParams = DosParam()
-
-
-if type( "sCmdParams" ) != 'U'
- if right( trim( m->sCmdParams ), 1 ) != '\'
-   m->sCmdParams += '\'
-
+sCmdParam = HB_ArgV(1)
+if !empty( sCmdParam )
+ if right( trim( sCmdParam ), 1 ) != '\'
+  sCmdParam += '\'
+ 
  endif
-
-else
- m->sCmdParams = ''
-
 endif
 
-Oddvars( SYSPATH, m->sCmdParams )
+Oddvars( SYSPATH, sCmdParam )
 
 set path to ( Oddvars( SYSPATH ) )
 
@@ -92,8 +71,6 @@ if len( directory( Oddvars( SYSPATH ) + '*.dbf' ) ) = 0
  SetupDbfs()         // a completely new program and exit after creation
 
 endif 
-
-// These routines will allow you to patch either if a new dbf (table) is required or if a new field is required for a dbf
 
 Oddvars( ENQ_STATUS, TRUE )
 Oddvars( IS_SPOOLING, FALSE )
@@ -124,11 +101,11 @@ mlen := max( 15, ( 20 + len( trim( BVars( B_COMPANY ) ) ) ) / 2 )
 
 Heading('*** Welcome to ' + SYSNAME + ' ***')
 aBox := Box_Save( 06, 38-mlen, 12, 41+mlen, C_CYAN )
-Center( 07, 'Copyright Bluegum Software' )
-Center( 08, SUPPORT_PHONE )
-Center( 09, 'Licensed to -=< ' + trim( BVars( B_COMPANY ) ) + ' >=-' )
-Center( 10, 'Build Version V' + BUILD_NO )
-Center( 11, 'Current System Date is ' + dtoc( Oddvars( SYSDATE ) ) )
+Centre( 07, 'Copyright Bluegum Software' )
+Centre( 08, SUPPORT_PHONE )
+Centre( 09, 'Licensed to -=< ' + trim( BVars( B_COMPANY ) ) + ' >=-' )
+Centre( 10, 'Build Version V' + BUILD_NO )
+Centre( 11, 'Current System Date is ' + dtoc( Oddvars( SYSDATE ) ) )
 
 
 #ifdef SECURITY

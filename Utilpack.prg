@@ -27,7 +27,7 @@ if goforit .or. Isready( )
  dbcloseall()
 
  if must_index
-  aeval( directory( '*.' + ordbagext() ), { | del_element | ferase( del_element[ 1 ] ) } )
+  aeval( directory( Oddvars( SYSPATH ) + '*.' + ordbagext() ), { | del_element | ferase( del_element[ 1 ] ) } )
  endif
 
  start_time=seconds()

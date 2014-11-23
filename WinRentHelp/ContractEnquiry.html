@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"  http-equiv="content-type">
+  <title>Enquiries</title>
+ <link rel="stylesheet" type="text/css" href="winrent.css">
+</head>
+<body>
+<h1>Contract Enquiry</h1>
+<p>Contract enquiries are by far the most common lookup in Winrent. WinRent presents a flexible Contract enquiry method.  All contract enquiries present the same screen</p>
+<IMG SRC="images\enquirydialog.jpg" BORDER=0 HEIGHT=75>
+ <ul>
+<li>Contract Number - if your enquiry text begins with a number Winrent will assume you are looking up by contract number.
+<li>Surname - If the enquiry text begins with a letter from A-Z Winrent will lookup using the surname
+<li>Deposit Book Number - prepending your enquiry number with a '*' will lookup using the deposit book number
+<li>Address - prepending using the "/" will search the first line of the address. i.e. if you put /123 then WinRent will show all addresses with "123" in the start of the text
+<li>Suburb - using a "+" at the start will force WinRent to search by Suburb i.e. +Manly will show all accounts in Manly
+<li>Phone - a "-" will allow a search by phone number
+</ul>
+<p> For all enquiries other than contract and deposit number, if there is more than one match, Winrent will display a pick list as follows<p>
+<IMG SRC="images\ContEnqPickList.jpg" BORDER=0 HEIGHT=250>
+<p>Navigate up and down the list using Page Up (PgUp) and Page Down (PgDn) for a full page. The keyboard arrow keys will move between individual contracts. Hit <Enter> to select the required entry. Note also that the left and right arrows will also display further columns beyond the right hand side of the dialog<br>A typical contract is displayed</p>
+<IMG SRC="images\ContEnqShow.jpg" BORDER=0 HEIGHT=250>
+<p>The screen shows the first hirer on the contract on the left side of the screen. If the contract has more than one hirer, you can select the others by using the right (and left) arrow keys. The purple section on the right shows contract details including the paid to date, the installment amount and the bond details. The panel at lower right shows the items on the contract. Note that only the first 3 items are shown.</p>
+<p>There are several extra functions available here. Hitting "C" will allow the "adhoc" comments to be edited. Just add/change the details and hit enter. The "long" comments can be accessed by hitting  F4. These comments are effectively "unlimited" and are stored in a text file (.txt) in the "mcomments" folder under the WinRent folder. These comments are stored by contract number i.e. the file 10001.txt is the comment folder for contract 10001. They can be edited, if required using an external text editor however WinRent cannot handle text from non "text editor" programs such as Microsoft Word.</p>
+<p>A number of other functions are also present. They are activated by the following function keys</p>
+<ul>
+<li>F5 - Shows the full item details on the contract
+<li>F6 - Shows the transactions on the contract
+<li>F7 - Displays the arrears history
+<li>F11 - Change the "Status" field
+</ul>
+ <h2>F5 - Items on contract</h2>
+<p>Shows the items on the contract. scroll up and down to select and hit enter to see the full details of each item</p>
+<h2>F6 -Transactions</h2>
+<p>Shows all transactions on the selected contract, sorted latest first. Hit the right arrow to scroll sideways if required. You can change the comments on any transaction by hitting <Enter><p>
+<h2>F7 - Arrears</h2>
+<p>Shows the arrears history (how often the contract went into arrears)</p>
+<h2>F11 - Status</h2>
+<p>Allows you to change the "Status" flag on the contract</p>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+body {
+	font-family: arial, helvetica, sans-serif;
+	font-size: 80%;
+	color: black;
+	background-color: #ffc;
+	margin: 1em;
+	padding: 0;
+     }
+
+h1   {    color: red;
+          font-family: arial, helvetica, sans-serif;
+  	  background-color: #ccc;
+
+     }
+
+h2   {    color: green;
+        font-family: arial, helvetica, sans-serif;
+
+     }

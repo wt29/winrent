@@ -54,7 +54,7 @@ Version History
 
 #endif
 
-#define __GTWVW__
+// #define __GTWVW__
 
 #define TEMP_EXT '.r2K'
 

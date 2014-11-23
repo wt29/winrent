@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>End of Day</title>
+ <link rel="stylesheet" type="text/css" href="winrent.css">
+</head>
+<body>
+<h1>End of Day Processing</h1>
+<p>This routine is probably the most important function is Winrent</p>
+<p>The EOD performs several functions - it</p>
+<ul>
+<li>Calculates if a payment is due today and if so, deducts it from the balance. It then updates the transaction listing
+<li>Determines if a contract is now in arrears and then creates an arrears record
+<li>Once all contracts have been examined, It advances the system date
+</ul>
+<p> An understanding of the "System Date" (SD) is most import to using Winrent. The SD is simply "the date to which all contracts have been advanced". The SD is required as you may not (for example) have received statements from the bank etc that detail client payments until a few days after the payment.</p> 
+<p>If the SD was advanced before all the payments were entered then the payment dates and possibly arrears details would be incorrect. Your should enter all payments for a particular day before you advance the system date beyond that date. It is OK to advance the system date several days at once, typically this would cover a weekend but once it is advance through a date, it cannot be reverted.</p>
+<p> To run the EOD, select the option. If you are running a network, you should have all other workstations back to the main menu before commencing. Winrent will ask you to confirm that you wish to proceed. It then asks which date the SD is to be advanced to. Typically this is one day however you can advance it as far as you need. You are then asked if you wish to "Audit the Arrears" this will produce a print out of contracts that fall into arrears during the run. Answering "Y' will commence scanning the contracts. At completion the system date will be advanced.</p>
+</body>
+</html>

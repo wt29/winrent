@@ -1,0 +1,28 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=WinRent.chm
+Contents file=Table of Contents.hhc
+Default topic=Introduction.htm
+Display compile progress=Yes
+Index file=winrent.hhk
+Language=0xc09 English (Australia)
+Title=Winrent Help
+
+
+[FILES]
+Introduction.htm
+SettingUp.htm
+ContractEnquiry.html
+ContractMaintenance.htm
+Enquiries.html
+FileMaintenance.htm
+Getting Started.htm
+Introduction.htm
+ItemMaintenance.htm
+OwnerMaintenance.htm
+SettingUp.htm
+Statements.html
+EOD.html
+
+[INFOTYPES]
+

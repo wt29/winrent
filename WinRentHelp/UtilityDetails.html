@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>End of Day</title>
+  <link rel="stylesheet" type="text/css" href="winrent.css">
+</head>
+<body>
+<h1>Utilities Details</h1>
+<p>This screen sets up a number of Winrent System variables. Most of
+these variables are system wide, the printer variables are on a "per
+workstation" basis. This meanes that the printers need to be set up on
+each workstation.</p>
+<h4>Address Lines</h4>
+Winrent will use these values as output on reports as required<br>
+<span style="font-weight: bold;"><br>
+Default Period of Grace<br>
+</span><span style="font-weight: bold;"></span>
+<p>Winrent will add the value here (if any) to the days a user is in
+arrearrs before sending out a letter.&nbsp;</p>
+<h4>Month for end of year</h4>
+<p>Used in asset value calculations. If your end of financial year is
+June then insert "06" into this field</p>
+<h4>Default Owner</h4>
+<p>Provides a default owner value when entering new stock</p>
+<h4>Item Start number</h4>
+<p>As you add items to &nbsp;WInrent, it adds a sequential number (the
+Item ID) to each record. This field allows you to select the starting
+value. You can change this at will</p>
+<h4>Contract Start Number</h4>
+<p>Each contract is identified by a sequential number. This field
+allows you set the starting value. In a &nbsp;new WinRent installation,
+this will start from 1. Note that the value of "0" (Zero) is reserved
+by WinrRent and cannot be used.</p>
+<h4>Printers</h4>
+<p>Printers are set on a "per workstation" basis, that is you
+need&nbsp;bo set the printers on each workstation individual. There are
+2 printers supported, a "Report" and a "Letter" printer. The majority
+of output is directed to the report printer. If you only use one
+printer for both then enter the same details in both fields.</p>
+WinRent supports both local and network printers. The most important
+thing to remember is the the printer name is case sensiitive and uses
+the "Windows Printer Name" for example, if you have a local printer
+called "Epson" then you must enter "Epson" in the printer string with
+the "E" as a capitalised. Shared printers on other machines are usually
+entered as a "UNC" string. e.g you have a printer Epson on a
+workstation "Computer1" - the string "\\Computer1\Epson" would be
+entered.<br>
+<h4>Late Fee Details</h4>
+Sets up &nbsp;the abilty to charge late fees and the amounts (fi any)
+on the arrears letters<br>
+<h4>Editor Program</h4>
+Winrent can output most reports to the screen if required. To do this,
+it ouputs the report to a text file and then calls an editor program to
+display it. If you don't have a preferred editor, enter "notepad.exe"
+otherwise enter the full path to your preferred text editor.<br>
+<p></p>
+<span style="font-weight: bold;"></span>
+</body>
+</html>

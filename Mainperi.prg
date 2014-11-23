@@ -45,9 +45,9 @@ if ok
 
  Box_Save( 1, 1, 20, 78 )
 
- Center( 2, 'This Program will Calculate all Outstanding Arrears Amounts' )
- Center( 4, 'It will also advance the system date. Do not use this program unless the' )
- Center( 5, 'payments, contracts etc for this system date have been entered.' )
+ Centre( 2, 'This Program will Calculate all Outstanding Arrears Amounts' )
+ Centre( 4, 'It will also advance the system date. Do not use this program unless the' )
+ Centre( 5, 'payments, contracts etc for this system date have been entered.' )
 
  Heading('End of Day')
 
@@ -63,7 +63,7 @@ if ok
   read
 
   if end_date - Bvars( B_SYSDATE )  >= 7
-   Center( 11, 'You are about to advance the system date more than 7 days' )
+   Centre( 11, 'You are about to advance the system date more than 7 days' )
 
    if !Isready( )
     dbcloseall()
@@ -101,7 +101,7 @@ if ok
    endif
 
    @ 15, 2 say space( 75 )
-   Center( 15, 'Processing for ' + dtoc( tran_date ) )
+   Centre( 15, 'Processing for ' + dtoc( tran_date ) )
 
    master->( dbgotop() )
 
@@ -132,7 +132,7 @@ if ok
 
      else
 
-      Center( 18, 'Generating arrears for contract #' + Ns( master->con_no ) )
+      Centre( 18, 'Generating arrears for contract #' + Ns( master->con_no ) )
       Add_rec( 'arrears' )
       arrears->con_no := master->con_no
       arrears->paid := NO
@@ -275,7 +275,7 @@ if NetUse( "arrears", EXCLUSIVE )
 
   Heading('Eom procedure')
   Box_Save( 3, 2, 9, 78 )
-  Center( 4, 'This program will allow you to clear old transaction and arrears details' )
+  Centre( 4, 'This program will allow you to clear old transaction and arrears details' )
   @ 06, 12 say '     Last date for arrears' get arr_date
   @ 07, 12 say 'Last date for transactions' get tran_date
   read
@@ -304,9 +304,9 @@ Heading( "Run end of Year procedure" )
 
 if NetUse( "items", EXCLUSIVE, 10 )
  Box_Save( 03, 03, 09, 76 )
- Center( 04, 'End of Year Requested' )
- Center( 06, 'This program will zero the year to date rentals and payments in the' )
- Center( 07, 'item file. If you wish to print these details first then answer "N".' )
+ Centre( 04, 'End of Year Requested' )
+ Centre( 06, 'This program will zero the year to date rentals and payments in the' )
+ Centre( 07, 'item file. If you wish to print these details first then answer "N".' )
 
  if Isready( 10 )
   replace all items->rent_ytd with 0, ;

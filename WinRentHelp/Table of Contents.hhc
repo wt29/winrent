@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="Window Styles" value="0x800025">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Introduction">
+		<param name="Local" value="Introduction.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Installing">
+			<param name="Local" value="SettingUp.htm">
+			<param name="ImageNumber" value="5">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Getting Started">
+			<param name="Local" value="Getting Started.htm">
+			<param name="ImageNumber" value="5">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="File Maintenance">
+		<param name="Local" value="FileMaintenance.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Owner File">
+			<param name="Local" value="OwnerMaintenance.htm">
+			<param name="ImageNumber" value="5">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Item Maintenance">
+			<param name="Local" value="ItemMaintenance.htm">
+			<param name="ImageNumber" value="5">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Contract Maintenance">
+			<param name="Local" value="ContractMaintenance.htm">
+			<param name="ImageNumber" value="5">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Enquiry">
+		<param name="Local" value="Enquiries.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Contract ">
+			<param name="Local" value="ContractEnquiry.html">
+			<param name="ImageNumber" value="5">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Item Enquiry">
+			<param name="Local" value="ItemEnquiry.html">
+			<param name="ImageNumber" value="5">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Owner Enquiry">
+			<param name="Local" value="OwnerEnquiry.html">
+			<param name="ImageNumber" value="5">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Transactions">
+		<param name="Local" value="TransactionMenu.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Transactions">
+			<param name="Local" value="TransactionMenu.html">
+			<param name="ImageNumber" value="5">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Reports">
+		<param name="Local" value="Reports.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Statements">
+			<param name="Local" value="Statements.html">
+			<param name="ImageNumber" value="5">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Period">
+		<param name="Local" value="EODMenu.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="End of Day">
+			<param name="Local" value="EOD.html">
+			<param name="ImageNumber" value="5">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Monthly">
+			<param name="Local" value="EOM.html">
+			<param name="ImageNumber" value="5">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Utilities">
+		<param name="Local" value="UtilityMenu.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Details">
+			<param name="Local" value="UtilityDetails.html">
+			<param name="ImageNumber" value="5">
+			</OBJECT>
+	</UL>
+</UL>
+</BODY></HTML>

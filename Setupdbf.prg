@@ -8,14 +8,15 @@
 
 function setupdbfs
 local lOK := FALSE, mdbfarr
-local x, mfilepath := Oddvars( SYSPATH )
+local x, cFilePath := Oddvars( SYSPATH )
 local getlist:={}
 
 cls
 @ 3, 04 say SYSNAME + ' has detected no Database files on this system.'
 @ 5, 04 say 'This section will set up the Database files required to run ' + SYSNAME
 @ 6, 04 say SYSNAME + ' will exit after creation - you will need to restart!'
-@ 8, 04 say 'Ok to create Database files' get lOK picture "Y"
+@ 7, 04 say 'System path is:' + cFilepath
+@ 9, 04 say 'Ok to create Database files' get lOK picture "Y"
 read
 
 if lOK

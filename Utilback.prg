@@ -61,7 +61,7 @@ while TRUE
     endif
 
    else
-    Center(5,'No zipped file on Disk')
+    Centre(5,'No zipped file on Disk')
 
    endif
    if Isready()
@@ -186,7 +186,7 @@ while TRUE
        @ 8,12 say space(58)
        Highlight( 7, 12, 'Backup file Date', dtoc(mdir[1,3] ) )
        if Isready(12)
-        Center(9,'Copying backup from Drive ' + mdrive + ': ...Please Wait')
+        Centre(9,'Copying backup from Drive ' + mdrive + ': ...Please Wait')
         if swap2dos( "xcopy " + mdrive +":" + BACKUPFILE + ".zip " + Oddvars( SYSPATH ) + BACKUPFILE + ".zip /y" )
          SysAudit( "ResDsk" )
 
@@ -236,7 +236,7 @@ while TRUE
    case rchoice = 4
     mscr:=Box_Save()
     Heading("Unzip All Database Files")
-    Center(7,'You are about to unzip ALL Database files')
+    Centre(7,'You are about to unzip ALL Database files')
     if Syspass()
      if Isready(10)
       if !NetUse( "master", EXCLUSIVE, 10 )
@@ -245,7 +245,7 @@ while TRUE
       else
        use
        Syscolor(3)
-       Center(9,"Last Chance - All current data will be overwritten")
+       Centre(9,"Last Chance - All current data will be overwritten")
        if Isready()
         Syscolor(1)
         if Swap2dos( "unzip -o " + Oddvars( SYSPATH ) + BACKUPFILE + " " + Oddvars( SYSPATH ) )

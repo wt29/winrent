@@ -93,7 +93,7 @@ while ok
 
    Box_Save( 02, 08, 6, 72 )
    @ 3,10 say 'Next Contract No' get temp_num pict '999999' valid( temp_num > 0 )
-   Center( 05, '-=< Hit Esc to exit >=-' )
+   Centre( 05, '-=< Hit Esc to exit >=-' )
    read
 
    if lastkey() = K_ESC
@@ -458,7 +458,7 @@ while ok
     mtype := 'P'
     mcomm := space( 20 )
     Box_Save( 6, 01, 9, 79 )
-    Center( 8, '-=< Hit <Esc> to Exit >=-' )
+    Centre( 8, '-=< Hit <Esc> to Exit >=-' )
     @ 7, 03 say 'Date' get mdate
     @ 7, 18 say 'Amount' get mpay pict '99999.99'
     @ 7, 35 say 'Type <PCD>' get mtype pict '!' valid( mtype $ 'PCD')
@@ -581,13 +581,13 @@ while ok
     hirer->( dbskip() )
     if pos_count = 1 .and. hirer->con_no != Oddvars( CONTRACT )
      Line_clear(23)
-     Center( 23,'Only Hirer on Contract' )
+     Centre( 23,'Only Hirer on Contract' )
      single_hire := TRUE
     endif
     hirer->( dbskip( -1 ) )
 
-    Center( 22, 'You may <D>elete, <C>hange this one or <A>ppend a new hirer' )
-    Center( 23, 'use '+chr(17)+' + '+chr(16)+' keys to scroll or <Esc> to exit' )
+    Centre( 22, 'You may <D>elete, <C>hange this one or <A>ppend a new hirer' )
+    Centre( 23, 'use '+chr(17)+' + '+chr(16)+' keys to scroll or <Esc> to exit' )
 
     mkey := inkey(0)
 
@@ -818,7 +818,7 @@ while ok
 
        items->( dbskip( -1 ) )
        Line_clear( 23 )
-       Center( 23, 'Use ' + chr( 17 ) + ' + ' + chr(16) + ' keys to scroll, ' + ;
+       Centre( 23, 'Use ' + chr( 17 ) + ' + ' + chr(16) + ' keys to scroll, ' + ;
                '<D> to delete or <Esc> to exit' )
 
        mkey := inkey( 0 )

@@ -65,7 +65,7 @@ while ok
 
   ContractEnq( mContractNum )
 
-  Center( 24, 'Use ' + LEFT_ARROW + ' + ' + RIGHT_ARROW + ' keys to scroll <C> to change ';
+  Centre( 24, 'Use ' + LEFT_ARROW + ' + ' + RIGHT_ARROW + ' keys to scroll <C> to change ';
               + 'comment or <Esc> to exit. <F1> for Help' )
 
   mkey := inkey( 0 )
@@ -764,7 +764,7 @@ while mgo
      nRow := 4
      nPos := 1
      @ 2,0 say ' No  Code      Desc                       Model            St'
-     @ 3,0 say '컴컵컴컴컴컴컴탠컴컴컴컴컴컴컴컴컴컴컴컴컵컴컴컴컴컴컴컴컴탠�'
+     @ 3,0 say '컴컵컴컴컴컴컴탠컴컴컴컴컴컴컴컴컴컴컴컴컵컴컴컴컴컴컴컴컴탠'
      lFlag := TRUE
      Highlight(1,02,'Records to search',Ns(lastrec()))
      bit := fieldpos(mfield)

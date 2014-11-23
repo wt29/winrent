@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Item File</Title>
+<link rel="stylesheet" type="text/css" href="winrent.css">
+</HEAD>
+<BODY>
+<h1>Item File Maintenance</h1>
+<p>Before you can create contracts, you will need to add fleet items (items) to the system. Access the item maintenance screen from the Main Menu using FA. Options in this menu are</p>
+<ul>
+<li>Add - Add items to the file
+<li>Change - Change item details
+<li>Owner - Change the owner on a number of items - typically out of lease situations
+<li>Delete - Delete an item from the file. Not possible if an item is on hire
+<li>History - Examine and adjust the item's maintenance history
+</ul>
+<h2>Add</h2>
+<p>WinRent will prompt you with the next sequential item number. You are free to use this number or subsitute one of your own. The item number does not need to be purely numeric. For example "XYZ123" is valid. Winrent will check to see if the number entered is unique. You will be prompted to re-enter if it is not.</p>
+<p>An item owner is then requested. The default code, set up in Utility/Details is offered. Enter a valid owner code. You are then presented with the item addition dialog. Fields presented are </p>
+<ul>
+<li>Model Number - this field is searchable
+<li>Description - Description of the item - not searchable
+<li>Serial No - Seachable field
+<li>Product Code - This field allows you to categorise your stock for exampe 7kg Washing machines. See "Entering System Codes" for details on how to create new codes.
+<li>Status - this is a coded field - There are 2 default status codes "O" = Onhand and "H" Hired. Winrent creates these automatically. You are free to add your own codes e.g. "R" for Repair for stock under repair. See "Entering System Codes" for details on how to create new codes.
+<li>History fields - If you are entering an existing fleet item and you have history details, you can enter these here. Note that WinRent will update these fields as the item is hired and returned.
+<li>Rental Amounts - Enter the Monthly, Fortnightly, Weekly and Daily rentals amounts here. These are used during contract creation. They can be overridden at contract creation. You must enter a value for each field. If you don't perform, for example, daily rentals simply enter a value of $1. There is no impact of entering values for rental periods you don't support.
+<li>Leasing Details - Entering the leasing details (if any) will permit WinRent to calculate Rule 72 leasing payout details. There is a report for this function. Note that this also requires the End of month function to be run.
+</ul> 
+<p> Hit PgDn to complete and save the item details. As before Esc will abandon (not save) the data entered</p>
+<h2>Change</h2>
+<p>Enter the item code to change details including history fields</p>
+<h2>Owner</h2>
+<p> This function allows you to change a range of items from one owner to another. Typically these will be items coming "off lease". The function requires entering an "old" owner and a "new" owner. Once entered you can enter a number of item codes. You will be prompted to confirm each change</p>
+<h2>Delete</h2>
+<p>Delete old stock items from the system using this function. Items that are on hire cannot be deleted. All item history is also deleted.</p>
+<h2>History</h2>
+<p>Used to add repair history to items</p>
+</BODY>
+</HTML>
