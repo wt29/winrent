@@ -110,7 +110,7 @@ if NetUse( "items" )
 	   read
 	   if Updated()
 	    sPath := trim( spath )
-	    if !isDir( spath )
+	    if !IsDirectory( spath )
 	     if IsReady( "Folder " + spath + " does not exist!" + CRLF + ;
                              "You must create this and run the new users 'Winrent' first" + CRLF +;
 							 "Hit 'No' to exit or 'Yes' after running up the new user program" ) 

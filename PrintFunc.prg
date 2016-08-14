@@ -737,10 +737,10 @@ endif
 
 if !toScreen
  oPrinter:NewLine()
- oPrinter:TextOut( replicate( chr( '=' ), oPrinter:maxcol() ) )
+ oPrinter:TextOut( replicate( DOUBLEULINE, oPrinter:maxcol() ) )
 
 else
- oPrinter:Write( replicate( chr( "=" ), nTotWidth ) )
+ oPrinter:Write( replicate( DOUBLEULINE, nTotWidth ) )
 
 endif
 
