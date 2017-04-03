@@ -1,6 +1,6 @@
 @echo off
 set CC=C:\borland\bcc55
-set HB=C:\develop\harbour-core
+set HB=C:\develop\xharbour\1.2.3
 
 set oldpath=%path%
 path=%path%;%cc%\bin;%hb%\bin\win\bcc

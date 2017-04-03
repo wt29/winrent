@@ -54,7 +54,7 @@ Version History
 
 #endif
 
-// #define __GTWVW__
+#define __GTWVW__
 
 #define TEMP_EXT '.r2K'
 
@@ -63,7 +63,7 @@ Version History
 #define FF chr( 12 )
 #define LF chr( 10 )   
 #define TAB chr( 09 )
-#define ULINE chr( 205 )   // '-'
+// #define ULINE chr( 205 )   // '-'
 #define NULL_DATE ctod( '  /  /  ' )
 #define TRUE .t.
 #define FALSE .f.
@@ -86,6 +86,9 @@ Version History
 #define SEC_CHAR chr(254)
 #define MODAL .t.
 #define DEPNOLEN  6
+
+#define ULINE chr(95)
+#define DBL_ULINE "="
 
 #define TOTAL_PICT "9999999.99"
 #define CURRENCY_PICT "999999.99"

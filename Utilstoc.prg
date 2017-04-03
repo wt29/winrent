@@ -1,13 +1,3 @@
-/** @package 
-
-        Utilstoc.prg
-        
-        Copyright(c) DEPT OF FOREIGN AFFAIRS TRADE 2000
-        
-        Author: DEPT OF FOREIGN AFFAIRS TRADE
-        Created: DOF 12/04/2009 4:39:20 PM
-      Last change:  TG   18 Oct 2010   10:53 pm
-*/
 * Asset_scan - Bluegum Software
 * Module Asstk - Stocktake Module
 * 28/10/86 T. Glynn 11:03:03  9/23/1987

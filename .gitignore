@@ -28,3 +28,6 @@ dbfstru/
 *.std
 *.exe
 *.lib
+error.log
+out.txt
+*.tds

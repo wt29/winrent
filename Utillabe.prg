@@ -90,7 +90,7 @@ local outstr, strlen, miLong, miShort
 local cbslash, cbplus, cbPercent, miPrint, b_bcptr
 local cBDot, cBDollar
 
-private mimac
+memvar mimac
 
 mibars = cbstart + '2'
 for x = 1 to len(p_33code)

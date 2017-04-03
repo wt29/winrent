@@ -367,7 +367,7 @@ while TRUE
 
 enddo
 
-return
+return nil
 
 *
 
@@ -381,7 +381,6 @@ aadd( aMenu, { 'Change System Date & GST rate', 'Directly Modify System Date', {
 // aadd( aMenu, { 'Check Email Functionality', 'Send a test email', { || SMTP_Send( TRUE ) } } )
 aadd( aMenu, { 'Edit Master File', 'Delete duplicate records', { || MasterDupl( ) } } )
 aadd( aMenu, { 'Update file schema', 'Update all files to latest schema', { || FixSchema( ) } } )
-
 nMenuChoice := MenuGen( aMenu, 10, 30, 'Maint Functs' )
 
 if nMenuChoice # 0

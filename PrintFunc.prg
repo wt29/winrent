@@ -737,10 +737,10 @@ endif
 
 if !toScreen
  oPrinter:NewLine()
- oPrinter:TextOut( replicate( DOUBLEULINE, oPrinter:maxcol() ) )
+ oPrinter:TextOut( replicate( DBL_ULINE, oPrinter:maxcol() ) )
 
 else
- oPrinter:Write( replicate( DOUBLEULINE, nTotWidth ) )
+ oPrinter:Write( replicate( DBL_ULINE, nTotWidth ) )
 
 endif
 
