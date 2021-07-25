@@ -37,9 +37,9 @@ Version History
 
 #define EVALEXP '01/12/2010'
 
-#define RENTACENTRE
+// #define RENTACENTRE
 // define BYRNES
-// #define ARGYLE
+#define ARGYLE
 // #define DIRECT
 
 #define CRYPTKEY 'BOLLOCKS'

@@ -132,22 +132,22 @@ if NetUse( "items" )
  	     @ 5, 5 say "Appending Contract No " + ns( nConNo ) + space(5)
 
 		 if NetUse( sPath + 'master', , ,'tempmast' )
-		  append from ( Oddvars( SYSPATH ) + 'master' ) for ( con_no = nConNo )
+		  append from ( Oddvars( SYSPATH ) + 'master' ) for ( master->con_no = nConNo )
 		  tempmast->( dbCloseArea() )
 	     endif
 
 		 if NetUse( sPath + 'hirer', , ,'temphirer' )
-		  append from ( Oddvars( SYSPATH ) + 'hirer' ) for ( con_no = nConNo )
+		  append from ( Oddvars( SYSPATH ) + 'hirer' ) for ( hirer->con_no = nConNo )
 		  temphirer->( dbCloseArea() )
 		 endif
 		 
 		 if NetUse( sPath + 'items', , ,'tempitems' )
-		  append from ( Oddvars( SYSPATH ) + 'items' ) for ( con_no = nConNo )
+		  append from ( Oddvars( SYSPATH ) + 'items' ) for ( items->con_no = nConNo )
 		  tempItems->( dbCloseArea() )
 		 endif
 
 		 if NetUse( sPath + 'tran', , ,'temptran' )
-		  append from ( Oddvars( SYSPATH ) + 'tran' ) for ( con_no = nConNo )
+		  append from ( Oddvars( SYSPATH ) + 'tran' ) for ( tran->con_no = nConNo )
 		  temptran->( dbCloseArea() )
 		 endif
 

@@ -31,3 +31,6 @@ dbfstru/
 error.log
 out.txt
 *.tds
+*.log
+*.zip
+*.csv

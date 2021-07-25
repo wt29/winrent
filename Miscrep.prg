@@ -740,6 +740,8 @@ local madd1 := trim( hirer->add1 )
 local madd2 := trim( hirer->add2 )
 local msub := trim( hirer->suburb )
 local mpcode := trim( hirer->pcode )
+local cEmail := trim(hirer->email )
+local cPhone := trim( hirer->tele_priv )
 
 local mamt := master->bal_bf * -1
 local mdue := dtoc( master->paid_to )
@@ -772,7 +774,7 @@ Highlight( 18, 04, 'Amount due', Ns( mamt ) )
 if !lPrintLetters
 
  sOut = ns( master->con_no) + CSV + mFirst + CSV + msurname + CSV + madd1 + CSV + madd2 + CSV + msub + CSV + ;
-        mpcode + CSV + ns( mamt ) + CSV + mdue + CSV + mdate + CRLF
+        mpcode + CSV + ns( mamt ) + CSV + mdue + CSV + mdate + CSV + cPhone + CSV + cEmail + CRLF
 
  FWrite ( sFileHandle, sOut )
 

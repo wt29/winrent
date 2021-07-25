@@ -31,14 +31,14 @@ OBJFILES = $(SRC04)\winrent.obj $(SRC04)\collrep.obj $(SRC04)\conprt.obj $(SRC04
  $(SRC04)\itemrep.obj $(SRC04)\maincont.obj $(SRC04)\mainitem.obj $(SRC04)\mainowne.obj $(SRC04)\mainperi.obj //
  $(SRC04)\mainsite.obj $(SRC04)\maintran.obj $(SRC04)\maintruc.obj $(SRC04)\mediexpo.obj $(SRC04)\mediimpo.obj //
  $(SRC04)\miscrep.obj $(SRC04)\newtruck.obj $(SRC04)\printfunc.obj $(SRC04)\proclib.obj $(SRC04)\pulsarex.obj //
- $(SRC04)\setupdbf.obj $(SRC04)\tranrep.obj $(SRC04)\utilback.obj //
+ $(SRC04)\setupdbf.obj $(SRC04)\tranrep.obj $(SRC04)\utilback.obj $(SRC04)\arglexpo.obj //
  $(SRC04)\utillabe.obj $(SRC04)\utilpack.obj $(SRC04)\utilsppa.obj $(SRC04)\utilstoc.obj $(OB)
  
 PRGFILES = winrent.prg collrep.prg conprt.prg enquire.prg errorsys.prg //
  itemrep.prg maincont.prg mainitem.prg mainowne.prg mainperi.prg //
  mainsite.prg maintran.prg maintruc.prg mediexpo.prg mediimpo.prg //
  miscrep.prg newtruck.prg printfunc.prg proclib.prg pulsarex.prg //
- setupdbf.prg tranrep.prg utilback.prg //
+ setupdbf.prg tranrep.prg utilback.prg arglexpo.prg //
  utillabe.prg utilpack.prg utilsppa.prg utilstoc.prg $(PS)
  
 OBJCFILES = $(OBC) 
